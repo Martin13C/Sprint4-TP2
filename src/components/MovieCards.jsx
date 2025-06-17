@@ -1,11 +1,8 @@
-import useWatchlist from "../hooks/useWatchlist"
 
-function MovieCards({ movie }) {
+function MovieCards({ movie, watchlist, addToWatchlist }) {
   // desestructuracion del objeto movie 
   const { id, image, title } = movie;
 
-  // utilizamos useWatchlist para poder agregar peliculas 
-  const { watchlist, addToWatchlist } = useWatchlist()
 
   // anular boton de agregar si una pelicula esta ya en la lista, evitando duplicados
   const isInWatchlist = watchlist.some((movie) => movie.id === id)

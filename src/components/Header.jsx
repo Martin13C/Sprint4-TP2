@@ -1,11 +1,4 @@
-import useWatchlist from "../hooks/useWatchlist"
-
-
-function Header({ onOpenModal }) {
-
-  const { watchlist } = useWatchlist()
-  const watchlistCount = watchlist.length
-
+function Header({ onOpenModal, watchlist }) {
 
   return (
     // navbar para la app 
@@ -23,7 +16,7 @@ function Header({ onOpenModal }) {
 
         {/* simbolo para el boton  */}
         <span className="relative ml-2 opacity: 1 transform: none ">
-          {watchlistCount > 0 ? (
+          {watchlist.length > 0 ? (
             // icono mas contador 
             <>
               <svg
@@ -35,7 +28,7 @@ function Header({ onOpenModal }) {
                 <path d="M128,232a8,8,0,0,1-5.65-2.34C115.31,222.63,48,159.1,48,104A56,56,0,0,1,160,104c0,55.1-67.31,118.63-74.35,125.66A8,8,0,0,1,128,232Z"></path>
               </svg>
               <span className="absolute -top-2  bg-yellow-500 text-black text-xs font-bold rounded-full px-2">
-                {watchlistCount}
+                {watchlist.length}
               </span>
             </>
           ) : (

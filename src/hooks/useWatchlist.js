@@ -6,7 +6,7 @@ export const useWatchlist = () => {
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("watchlist")) || [];
     setWatchlist(stored)
-  }, [watchlist]);
+  }, []);
   
   const addToWatchlist = (movie)  => {
     if (!watchlist.find(item => item.id === movie.id)) {
