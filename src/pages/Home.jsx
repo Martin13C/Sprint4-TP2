@@ -6,7 +6,7 @@ import useWatchlist from '../hooks/useWatchlist'
 
 function Home() {
   // importacion de useWatchlist para poder usar el contexto de la watchlist
-   const { watchlist, addToWatchlist, removeFromWatchlist } = useWatchlist()
+   const { watchlist, addToWatchlist, removeFromWatchlist, clearWatchlist } = useWatchlist()
   // useState para enviar stado de modal abierto o no 
   const [isModalOpen, setisModalOpen] = useState(false)
   return (
@@ -24,6 +24,7 @@ function Home() {
           watchlist={watchlist}
           removeFromWatchlist={removeFromWatchlist}
           onClose={() => setisModalOpen(false)} 
+          clearWatchlist={clearWatchlist}
           />    
         )}
         <MovieList 

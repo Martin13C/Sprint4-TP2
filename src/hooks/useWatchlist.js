@@ -22,7 +22,12 @@ export const useWatchlist = () => {
     localStorage.setItem("watchlist", JSON.stringify(updated));
   };
 
-  return {watchlist, addToWatchlist, removeFromWatchlist}
+  const clearWatchlist = () => {
+    setWatchlist([]);
+    localStorage.removeItem("watchlist");
+  };
+
+  return {watchlist, addToWatchlist, removeFromWatchlist, clearWatchlist}
 }
 
 export default useWatchlist

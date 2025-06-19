@@ -20,7 +20,7 @@ function MovieCards({ movie, watchlist, addToWatchlist }) {
       con envios de datos al LocalStorage,
       con className condicional por si la pelicula ya esta agregada  */}
       <button
-        className={`mt-3 bg-yellow-500 hover:bg-yellow-600 font-medium py-2 px-4 rounded-full transition-colors cursor-pointer ${isInWatchlist ? "bg-gray-400 text-white cursor-not-allowed" : "bg-yellow-500 hover:bg-yellow-600 text-white"}  `}
+        className={`mt-3 text-white font-medium py-2 px-4 rounded-full transition-colors cursor-pointer ${isInWatchlist ? "bg-gray-950 cursor-not-allowed " : "bg-yellow-500 hover:bg-yellow-600"}  `}
 
         disabled={isInWatchlist}
         onClick={() => addToWatchlist({ id, title, url: `/src/assets/img/${image}` })}
